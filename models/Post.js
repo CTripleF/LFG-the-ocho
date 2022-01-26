@@ -1,4 +1,3 @@
-const model = require('connect-session-sequelize/lib/model');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -18,7 +17,7 @@ Post.init(
           },
         //   we can turn it into a link with <a href> in html
         discord_link: {
-            type: DayaTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: true
         },
             post_url: {
@@ -35,16 +34,15 @@ Post.init(
                 key: 'id'
             }
             },
-            // not sure about this game_id below - I think we need a table that is seeded with all of the games and we can post to /xbox /cardgames etc. based on game id "where: game id: 1"
-            game_id: {
+            // not sure about this interest_id below - I think we need a table that is seeded with all of the games and we can post to /xbox /cardgames etc. based on game id "where: game id: 1"
+            interest_id: {
                 type: DataTypes.INTEGER,
                 references: {
-                    model: 'game',
+                    model: 'interest',
                     key: 'id'
                 }
             },
             },
-       
         {
           sequelize,
           freezeTableName: true,
