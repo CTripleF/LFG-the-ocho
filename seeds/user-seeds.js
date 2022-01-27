@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
 const { User, Post } = require('../models');
 
-const userdata = [
+const userData = [
   {
     username: 'Yoda',
     email: 'an-email-this-is@forcemail.ca',
@@ -54,6 +54,6 @@ const userdata = [
   }
 ];
 
-const seedUsers = () => User.bulkCreate(userdata, {individualHooks: true});
+const seedUsers = () => User.bulkCreate(userData, {individualHooks: true});
 
 module.exports = seedUsers;
