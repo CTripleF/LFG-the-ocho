@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+const { Interest } = require('.');
 
 const sequelize = require('../config/connection');
 
@@ -52,6 +53,15 @@ User.init(
         user_bio: {
             type: DataTypes.STRING(80),
             allowNull: true,
+        },
+        
+        interest_id: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: 'interest',
+                key: 'id'
+            }
         }
     },
     {
