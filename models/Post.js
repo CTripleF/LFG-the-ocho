@@ -14,19 +14,22 @@ Post.init(
         title: {
             type: DataTypes.STRING,
             allowNull: false
-          },
+        },
         //   we can turn it into a link with <a href> in html
         discord_link: {
             type: DataTypes.STRING,
-            allowNull: true
-        },
-            post_url: {
-            type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 isURL: true
             }
             },
+            // post_url: {
+            // type: DataTypes.STRING,
+            // allowNull: false,
+            // validate: {
+            //     isURL: true
+            // }
+            // },
             user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -44,12 +47,12 @@ Post.init(
             },
             },
         {
-          sequelize,
-          freezeTableName: true,
-          underscored: true,
-          modelName: 'post'
+            sequelize,
+            freezeTableName: true,
+            underscored: true,
+            modelName: 'post'
         }
-      );
+    );
 
-      model.exports = Post;
+module.exports = Post;
     
