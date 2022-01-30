@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Post, Interest, User, Comment, filterByQuery } = require('../../models');
+const { Post, Interest, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Find All
@@ -70,6 +70,38 @@ router.get('/:id', (req, res) => {
 });
 
 // Search by Query
+router.get('/', (req,res) => {
+    let queryId = req.params.game_interest;
+    Post.findAll({
+        where: {
+            game_interest: queryId
+        },
+        attributes: [
+            'id',
+            'title',
+            'discord_link'
+        ],
+        include: [
+            {
+                model: Comment,
+                attributes: ['comment_text', 'user_id', 'post_id'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    }).then(dbPostData => res.json(dbPostData))
+      .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+      });
+});
+
 
 // Create
 router.post('/', withAuth, (req, res) => {
