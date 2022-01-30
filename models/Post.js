@@ -94,8 +94,5 @@ Post.init(
         }
     );
 
-      module.exports = {
-          filterByQuery,
-          Post
-      };
+module.exports = { filterByQuery, Post };
     
