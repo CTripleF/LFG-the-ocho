@@ -23,4 +23,5 @@ async function newFormHandler(event) {
     }
 }
 
-//  document.querySelector(CLASS FOR POST FORM).addEventListener('submit', newFormHandler);
+// Need below info
+// document.querySelector(CLASS FOR POST FORM).addEventListener('submit', newFormHandler);
