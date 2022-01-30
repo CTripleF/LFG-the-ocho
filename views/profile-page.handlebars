@@ -4,7 +4,7 @@
     <div class="field">
         <label class="label has-text-white">Username:</label>
         <div class="control has-icons-left">
-            <input class="input" id="username" name="username" type="text" placeholder="Update Username">
+            <input class="input is-success" id="username" name="username" type="text" placeholder="Update Username">
                 <span class="icon is-small is-left">
                     <i class="fas fa-user"></i>
                 </span>
@@ -14,7 +14,7 @@
     <div class="field">
         <label class="label has-text-white">Email:</label>
         <div class="control has-icons-left has-icons-right">
-            <input class="input" id="email" name="email" type="text" placeholder="Update Email">
+            <input class="input is-primary" id="email" name="email" type="text" placeholder="Update Email">
             <span class="icon is-small is-left">
                 <i class="fas fa-envelope"></i>
             </span>
@@ -24,7 +24,7 @@
     <div class="field">
         <label class="label has-text-white">Password:</label>
         <div class="control has-icons-left has-icons-right">
-            <input class="input" id="password" name="password" type="text" placeholder="Update Password">
+            <input class="input is-danger" id="password" name="password" type="text" placeholder="Update Password">
             <span class="icon is-small is-left">
                 <i class="fas fa-lock"></i>
             </span>
@@ -33,12 +33,12 @@
     <!--USER BIO-->
     <div class="field">
         <label class="label has-text-white">User Bio:</label>
-        <div class="control">
+        <div class="control is-info">
             <textarea class="textarea" id="userBio" name="userBio" placeholder="Update User Bio"></textarea>
         </div>
     </div>
     <!--USER INTERESTS-->
-    <div class="select is-multiple">
+    <div class="select is-multiple is-info">
         <label class="label has-text-white">Update Interests:</label>
         <select multiple size="10">
             <option value="XBOX">XBOX</option>
@@ -57,7 +57,7 @@
     <div class="field">
         <label class="label has-text-white">Discord Server Link:</label>
         <div class="control has-icons-left has-icons-right">
-            <input class="input" id="discord" name="discord" type="text" placeholder="Add Discord Link">
+            <input class="input is-primary" id="discord" name="discord" type="text" placeholder="Add Discord Link">
             <span class="icon is-small is-left">
                 <i class="fa fab-discord"></i>
             </span>
@@ -88,4 +88,4 @@
 {{/if}}
 
 <script src="../public/javascript/profile.js"></script>
-<script src="/javascript/add-post.js"></script>
+<script src="../public/javascript/add-post.js"></script>
