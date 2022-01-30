@@ -1,0 +1,38 @@
+<article>
+    <a href="/homepage"> &larr; Back to homepage</a>
+    <h2 class="label has-text-white">
+        Edit Post
+    </h2>
+    <div class="edit-post-form">
+        <div class="field">
+            <label class="label has-text-white">Post Title:</label>
+                <input class="input" name="post-title" type="text" value="{{post.title}}" />
+                <span>({{format_url post.post_url}})</span>
+        </div>
+        <div class="field">
+            <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+        </div>
+        <div class="field is-grouped">
+        <div class="control">
+            <button class="button is-primary" type="submit">Save Post</button>
+        </div>
+        <div class="control">
+            <button id="delete-post-btn" class="button is-danger" type="button" >Delete Post</button>
+        </div>
+</article>
+
+<form class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>
+        <button type="submit" class="button is-primary">add comment</button>
+    </div>
+</form>
+
+{{> comments post.comments}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>
