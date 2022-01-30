@@ -71,10 +71,10 @@ router.get('/:id', (req, res) => {
 
 // Search by Query
 router.get('/', (req,res) => {
-    let queryId = req.body.game_interest;
+    let queryId = req.params.interest_id;
     Post.findAll({
         where: {
-            game_interest: queryId
+            interest_id: queryId
         },
         attributes: [
             'id',
@@ -109,7 +109,7 @@ router.post('/', withAuth, (req, res) => {
         title: req.body.title,
         discord_link: req.body.dircord_link,
         user_id: req.session.user_id,
-        game_interest: req.body.game_interest
+        interest_id: req.body.interest_id
     }).then(dbPostData => res.json(dbPostData))
     .catch(err => {
         console.log(err);

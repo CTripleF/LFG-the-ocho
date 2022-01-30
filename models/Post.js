@@ -78,7 +78,7 @@ Post.init(
             }
             },
             // not sure about this interest_id below - I think we need a table that is seeded with all of the games and we can post to /xbox /cardgames etc. based on game id "where: game id: 1"
-            game_interest: {
+            interest_id: {
                 type: DataTypes.INTEGER,
                 references: {
                     model: 'interest',
