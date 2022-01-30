@@ -71,7 +71,7 @@ router.get('/:id', (req, res) => {
 
 // Search by Query
 router.get('/', (req,res) => {
-    let queryId = req.params.game_interest;
+    let queryId = req.body.game_interest;
     Post.findAll({
         where: {
             game_interest: queryId
@@ -108,7 +108,8 @@ router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
         discord_link: req.body.dircord_link,
-        user_id: req.session.user_id
+        user_id: req.session.user_id,
+        game_interest: req.body.game_interest
     }).then(dbPostData => res.json(dbPostData))
     .catch(err => {
         console.log(err);
