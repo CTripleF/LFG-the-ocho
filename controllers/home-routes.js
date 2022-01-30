@@ -70,7 +70,7 @@ router.get('/:id', (req, res) => {
 
 // Search by Query
 router.get('/', (req,res) => {
-    let queryId = req.params.game_interest;
+    let queryId = req.body.game_interest;
     Post.findAll({
         where: {
             game_interest: queryId
