@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Post, Interest, User, Comment, filterByQuery } = require('../../models');
+const { Post, Interest, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Find All
@@ -70,13 +70,46 @@ router.get('/:id', (req, res) => {
 });
 
 // Search by Query
+router.get('/', (req,res) => {
+    let queryId = req.params.interest_id;
+    Post.findAll({
+        where: {
+            interest_id: queryId
+        },
+        attributes: [
+            'id',
+            'title',
+            'discord_link'
+        ],
+        include: [
+            {
+                model: Comment,
+                attributes: ['comment_text', 'user_id', 'post_id'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    }).then(dbPostData => res.json(dbPostData))
+      .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+      });
+});
+
 
 // Create
 router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
         discord_link: req.body.dircord_link,
-        user_id: req.session.user_id
+        user_id: req.session.user_id,
+        interest_id: req.body.interest_id
     }).then(dbPostData => res.json(dbPostData))
     .catch(err => {
         console.log(err);
