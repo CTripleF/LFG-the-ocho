@@ -70,17 +70,36 @@
 
             <div class="column is-10">
                 <!--CARDS SHOWING USER PROFILES APPEAR HERE!-->
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <!--SAMPLE CARD 1-->
-                    </div>
-                    <div class="column is-one-third">
-                        <!--SAMPLE CARD 2-->
-                    </div>
-                    <div class="column is-one-third">
-                        <!--SAMPLE CARD 3-->
-                    </div>
-                </div>
+                <section>
+                    <ol class="post-list">
+                        {{#each posts as |post|}}
+                            <li>
+                            {{> post-info post }}
+                            </li>
+                        {{/each}}
+                    </ol>
+                </section>
+                <section>
+                    <h2 class="title has-text-white">Create New Post:</h2>
+                    <div class="field" id+"new-post-form">
+                        <div>
+                            <label for="post-title" class="subtitle has-text-white">Title:</label>
+                            <input type="text" id="post-title" name="post-title" />
+                        </div>
+                        <div>
+                            <label for="post-url" class="subtitle has-text-white">Link:</label>
+                            <input id="post-url" name="post-url" />
+                        </div>
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button class="button is-primary" type="submit">Save</button>
+                            </div>
+                            <div class="control">
+                                <button class="button is-danger">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
             </div>
         </div>
     </section>
