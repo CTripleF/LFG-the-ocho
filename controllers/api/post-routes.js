@@ -109,9 +109,7 @@ router.post('/', withAuth, (req, res) => {
         title: req.body.title,
         discord_link: req.body.discord_link,
         user_id: req.session.user_id,
-        game_tite: req.body.game_title,
-        game_console: req.body.game_console,
-        game_type: req.body.game_type
+        interest_id: req.body.interest_id
         
     }).then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -160,4 +158,4 @@ router.delete('/:id', withAuth, (req, res) => {
     })
 });
 
-module.exports = Post;
+module.exports = router;
