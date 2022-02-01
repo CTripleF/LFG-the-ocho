@@ -22,7 +22,7 @@ User.findOne({
     include: [
     {
         model: Post,
-        attributes: ['id', 'title', 'discord_url', 'created_at', 'discord_link']
+        attributes: ['id', 'title', 'created_at', 'discord_link']
     },
     {
         model: Comment,

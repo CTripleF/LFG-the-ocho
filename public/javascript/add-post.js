@@ -2,13 +2,13 @@ async function newFormHandler(event) {
     event.preventDefault();
 
     const title = document.querySelector('input[name="post-title"]').value;
-    const discord_url = document.querySelector('input[name="discord-url]').value;
+    const discord_link = document.querySelector('input[name="discord-link]').value;
 
     const response = await fetch('/api/posts', {
         method: 'POST',
         body: JSON.stringify({
             title,
-            discord_url
+            discord_link
         }),
         headers: {
             'Content-Type': 'application/json'
