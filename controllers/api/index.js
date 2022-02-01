@@ -7,7 +7,7 @@ const interestRoutes = require('./interest-routes');
 
 
 router.use('/users', userRoutes);
-router.use('/posts', postRoutes);
+// router.use('/posts', postRoutes);
 router.use('/comments', commentRoutes);
 router.use('/interest', interestRoutes);
 
