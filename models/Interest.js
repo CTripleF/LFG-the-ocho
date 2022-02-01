@@ -1,3 +1,4 @@
+// const database = require('mime-db');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -10,21 +11,28 @@ Interest.init(
             primaryKey: true,
             autoIncrement: true
         },
-        post_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'post',
-                key: 'id'
+        // user_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'user',
+        //         key: 'id'
+        //     }
+        // },
+        game_title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+              isAlphanumeric: true
             }
         },
+        game_console: {
+          type: DataTypes.STRING,
+          allowNull: true
+        },
         // this will be where the users game preferences will be stored
-        game_interest: {
-            type: DataTypes.ARRAY,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
-
+        game_type: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     },
     {

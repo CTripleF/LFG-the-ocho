@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: Comment,
-                attributes: ['comment_text', 'user_id', 'post_id'],
+                attributes: ['id','comment_text', 'user_id', 'post_id'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -71,10 +71,10 @@ router.get('/:id', (req, res) => {
 
 // Search by Query
 router.get('/', (req,res) => {
-    let queryId = req.params.interest_id;
+    let gameQuery = req.params.game_type;
     Post.findAll({
         where: {
-            interest_id: queryId
+            game_type: gameQuery
         },
         attributes: [
             'id',
@@ -107,9 +107,12 @@ router.get('/', (req,res) => {
 router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
-        discord_link: req.body.dircord_link,
+        discord_link: req.body.discord_link,
         user_id: req.session.user_id,
-        interest_id: req.body.game_interest
+        game_tite: req.body.game_title,
+        game_console: req.body.game_console,
+        game_type: req.body.game_type
+        
     }).then(dbPostData => res.json(dbPostData))
     .catch(err => {
         console.log(err);
@@ -156,3 +159,5 @@ router.delete('/:id', withAuth, (req, res) => {
         res.status(500).json(err);
     })
 });
+
+module.exports = Post;

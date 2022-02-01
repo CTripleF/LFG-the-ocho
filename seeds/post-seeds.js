@@ -12,7 +12,7 @@ const postData = [
     user_id: 2
   },
   {
-    title: 'One to hold the power and one to ',
+    title: 'One to hold the power and one to seek it',
     discord_link: 'https://discord.gg/wECASPU8Ky',
     user_id: 3
   }

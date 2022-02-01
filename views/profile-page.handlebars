@@ -1,10 +1,10 @@
 <!--EDIT PROFILE PAGE FORM, WILL FILL SPACE UNDER NAV BAR & TO RIGHT OF MENU-->
-<div class="column is-10">
+<div class="profile-update-form">
     <!--USERNAME-->
     <div class="field">
         <label class="label has-text-white">Username:</label>
         <div class="control has-icons-left">
-            <input class="input" type="text" placeholder="Update Username">
+            <input class="input is-success" id="username" name="username" type="text" placeholder="Update Username">
                 <span class="icon is-small is-left">
                     <i class="fas fa-user"></i>
                 </span>
@@ -14,7 +14,7 @@
     <div class="field">
         <label class="label has-text-white">Email:</label>
         <div class="control has-icons-left has-icons-right">
-            <input class="input" type="email" placeholder="Update Email" value="hello@">
+            <input class="input is-primary" id="email" name="email" type="text" placeholder="Update Email">
             <span class="icon is-small is-left">
                 <i class="fas fa-envelope"></i>
             </span>
@@ -24,7 +24,7 @@
     <div class="field">
         <label class="label has-text-white">Password:</label>
         <div class="control has-icons-left has-icons-right">
-            <input class="input" type="password" placeholder="Update Password">
+            <input class="input is-danger" id="password" name="password" type="text" placeholder="Update Password">
             <span class="icon is-small is-left">
                 <i class="fas fa-lock"></i>
             </span>
@@ -33,12 +33,12 @@
     <!--USER BIO-->
     <div class="field">
         <label class="label has-text-white">User Bio:</label>
-        <div class="control">
-            <textarea class="textarea" placeholder="Update User Bio"></textarea>
+        <div class="control is-info">
+            <textarea class="textarea" id="userBio" name="userBio" placeholder="Update User Bio"></textarea>
         </div>
     </div>
     <!--USER INTERESTS-->
-    <div class="select is-multiple">
+    <div class="select is-multiple is-info">
         <label class="label has-text-white">Update Interests:</label>
         <select multiple size="10">
             <option value="XBOX">XBOX</option>
@@ -57,7 +57,7 @@
     <div class="field">
         <label class="label has-text-white">Discord Server Link:</label>
         <div class="control has-icons-left has-icons-right">
-            <input class="input" type="discord" placeholder="Add Discord Link">
+            <input class="input is-primary" id="discord" name="discord" type="text" placeholder="Add Discord Link">
             <span class="icon is-small is-left">
                 <i class="fa fab-discord"></i>
             </span>
@@ -65,7 +65,7 @@
     </div>
     <div class="field is-grouped">
         <div class="control">
-            <button class="button is-primary">Save</button>
+            <button class="button is-primary" type="submit">Save</button>
         </div>
         <div class="control">
             <button class="button is-danger">Cancel</button>
@@ -73,5 +73,19 @@
     </div>
 </div>
 
+{{#if posts.length}}
+<section>
+    <h2>Your Posts</h2>
+    <ol>
+    {{#each posts as |post|}}
+    <li>
+        {{> post-info post}}
+        <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+    </ol>
+</section>
+{{/if}}
 
 <script src="../public/javascript/profile.js"></script>
+<script src="../public/javascript/add-post.js"></script>
