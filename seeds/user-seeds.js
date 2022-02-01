@@ -19,7 +19,7 @@ const userData = [
   },
   {
     username: 'Batman',
-    email: 'horrible_father@endangeringkids.com',
+    email: 'horrible_father@endangeringkids.duh',
     password: 'password123'
   },
   {

@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
-const { Interest } = require('.');
-
+// const { Interest } = require('.');
+const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class User extends Model { 
@@ -55,14 +55,14 @@ User.init(
             allowNull: true,
         },
         
-        interest_id: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            references: {
-                model: 'interest',
-                key: 'id'
-            }
-        }
+        // interest_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true,
+        //     references: {
+        //         model: 'interest',
+        //         key: 'id'
+        //     }
+        // }
     },
     {
         hooks: {
