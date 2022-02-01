@@ -10,13 +10,6 @@ Interest.init(
             primaryKey: true,
             autoIncrement: true
         },
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'user',
-        //         key: 'id'
-        //     }
-        // },
         post_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -26,11 +19,11 @@ Interest.init(
         },
         // this will be where the users game preferences will be stored
         game_interest: {
-            type: DataTypes.ARRAY
-            // references: {
-            //     model: 'user',
-            //     key: 'id'
-            // }
+            type: DataTypes.ARRAY,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
 
         }
     },
