@@ -8,7 +8,10 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'title',
-            'discord_link'
+            'discord_link',
+            'game_title',
+            'game_console',
+            'game_type'
         ],
         include: [
             {
@@ -40,7 +43,10 @@ router.get('/:id', (req, res) => {
         attributes: [
             'id',
             'title',
-            'discord_link'
+            'discord_link',
+            'game_title',
+            'game_console',
+            'game_type'
         ],
         include: [
             {
@@ -70,15 +76,18 @@ router.get('/:id', (req, res) => {
 
 // Search by Query
 router.get('/', (req,res) => {
-    let queryId = req.params.interest_id;
+    let gameQuery = req.params.interest_id;
     Post.findAll({
         where: {
-            interest_id: queryId
+            game_type: queryId
         },
         attributes: [
             'id',
             'title',
-            'discord_link'
+            'discord_link',
+            'game_title',
+            'game_console',
+            'game_type'
         ],
         include: [
             {
