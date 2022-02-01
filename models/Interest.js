@@ -11,18 +11,11 @@ Interest.init(
             primaryKey: true,
             autoIncrement: true
         },
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'user',
-        //         key: 'id'
-        //     }
-        // },
-        game_title: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-              isAlphanumeric: true
+        post_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'post',
+                key: 'id'
             }
         },
         game_console: {

@@ -109,7 +109,7 @@ router.post('/', withAuth, (req, res) => {
         title: req.body.title,
         discord_link: req.body.dircord_link,
         user_id: req.session.user_id,
-        interest_id: req.body.interest_id
+        interest_id: req.body.game_interest
     }).then(dbPostData => res.json(dbPostData))
     .catch(err => {
         console.log(err);
