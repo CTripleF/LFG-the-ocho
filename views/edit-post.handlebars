@@ -12,21 +12,19 @@
         <div class="field">
             <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
         </div>
-        <div class="select is-multiple is-info">
-        <label class="label has-text-white">Select Interests:</label>
-        <select multiple size="10">
-            <option value="XBOX">XBOX</option>
-            <option value="Playstation">Playstation</option>
-            <option value="Cross-Platform">Cross-Platform</option>
-            <option value="MMOs">MMOs</option>
-            <option value="MOBAs">MOBAs</option>
-            <option value="RTS">RTS</option>
-            <option value="Sports">Sports</option>
-            <option value="Board Games">Board Games</option>
-            <option value="Card Games">Card Games</option>
-            <option value="Table Top Games">Table Top Games</option>
-        </select>
-    </div>
+        <!--ADD INTEREST KEY WORDS-->
+            <div class="field">
+                <label class="label has-text-white">Please Enter Your Console Type: XBOX, Playstation, PC or Cross-Platform</label>
+                <div class="control">
+                    <input class="input is-info" id="console" name="console" type="text" placeholder="Console Type">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label has-text-white">Please Enter Relevant Interests: MMOs, MOBAs, RTS, Sports, Board Games, Card Games, Table Top Games</label>
+                <div class="control">
+                    <input class="input is-primary" id="interest" name="interest" type="text" placeholder="Relevant Interests">
+                </div>
+            </div>
         <div class="field is-grouped">
         <div class="control">
             <button class="button is-primary" type="submit">Save Post</button>
