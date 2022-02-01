@@ -81,14 +81,14 @@ Post.init(
 
             //currently causese dependency loop "Dependency chain: post -> interest => post"
             //loop was created in index route, need to identify better way to join keys
-            interest_id: {
-                type: DataTypes.INTEGER,
-                allowNull: true,
-                references: {
-                    model: 'interest',
-                    key: 'id'
-                }
-            }
+            // interest_id: {
+            //     type: DataTypes.INTEGER,
+            //     allowNull: true,
+            //     references: {
+            //         model: 'interest',
+            //         key: 'id'
+            //     }
+            // }
             },
         {
             sequelize,

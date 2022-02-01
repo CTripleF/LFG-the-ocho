@@ -26,8 +26,16 @@ Interest.init(
         game_type: {
             type: DataTypes.STRING,
             allowNull: true
-        }
+        },
+        post_id: {
+          type: DataTypes.INTEGER,
+          references: {
+            model: 'post',
+            key: 'id'
+          }
+        },
     },
+   
     {
         sequelize,
         timestamps: false,

@@ -9,7 +9,10 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'title',
-            'discord_link'
+            'discord_link',
+            'game_title',
+            'game_console',
+            'game_type'
         ],
         include: [
             {
@@ -24,6 +27,7 @@ router.get('/', (req, res) => {
                 model: User,
                 attributes: ['username']
             }
+            
         ]
     }).then(dbPostData => res.json(dbPostData))
       .catch(err => {
@@ -41,7 +45,10 @@ router.get('/:id', (req, res) => {
         attributes: [
             'id',
             'title',
-            'discord_link'
+            'discord_link',
+            'game_title',
+            'game_console',
+            'game_type'
         ],
         include: [
             {
@@ -79,7 +86,10 @@ router.get('/', (req,res) => {
         attributes: [
             'id',
             'title',
-            'discord_link'
+            'discord_link',
+            'game_title',
+            'game_console',
+            'game_type'
         ],
         include: [
             {
@@ -108,8 +118,10 @@ router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
         discord_link: req.body.discord_link,
+        game_title: req.body.game_title,
+        game_console: req.body.game_console,
+        game_type: req.body.game_type,
         user_id: req.session.user_id,
-        interest_id: req.body.interest_id
         
     }).then(dbPostData => res.json(dbPostData))
     .catch(err => {
