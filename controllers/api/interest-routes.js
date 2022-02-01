@@ -64,9 +64,9 @@ router.get('/:id', (req, res) => {
         res.json(dbPostData);
     })
         .catch(err => {
-        console.log(err);
+        console.log(err);s
         res.status(500).json(err);
     });
-})
+});
 
 // module.exports = router;

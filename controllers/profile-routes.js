@@ -13,7 +13,10 @@ router.get('/,', withAuth, (req, res) => {
         attributes: [
             'id',
             'title',
-            'discord_link'
+            'discord_link',
+            'game_title',
+            'game_console',
+            'game_type'
         ],
         include: [
             {
@@ -47,7 +50,10 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'post_id',
-            'game_interest'
+            'game_interest',
+            'game_title',
+            'game_console',
+            'game_type'
         ],
         include: [
             {
