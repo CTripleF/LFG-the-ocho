@@ -24,6 +24,30 @@ const postData = [
     game_title:"Call of Duty",
     game_console: "PC",
     game_type:"FPS"
+  },
+  {
+    title: 'One to hold the power and one to seek it',
+    discord_link: 'https://discord.gg/wECASPU8Ky',
+    user_id: 3,
+    game_title:"Call of Duty",
+    game_console: "PC",
+    game_type:"FPS"
+  },
+  {
+    title: 'One to hold the power and one to seek it',
+    discord_link: 'https://discord.gg/wECASPU8Ky',
+    user_id: 3,
+    game_title:"Call of Duty",
+    game_console: "PC",
+    game_type:"FPS"
+  },
+  {
+    title: 'One to hold the power and one to seek it',
+    discord_link: 'https://discord.gg/wECASPU8Ky',
+    user_id: 3,
+    game_title:"Call of Duty",
+    game_console: "PC",
+    game_type:"FPS"
   }
 ]
 
