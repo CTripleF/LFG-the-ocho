@@ -65,6 +65,12 @@ router.get('/:id', (req, res) => {
         console.log(err);
         res.status(500).json(err);
     });
+<<<<<<< HEAD
 })
 
 module.exports = router;
+=======
+});
+
+module.exports = Interest;
+>>>>>>> 37f8fe37b752b1dd67d9c5da4b4b7e6934511694

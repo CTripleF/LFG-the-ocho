@@ -88,7 +88,7 @@ Post.init(
                     model: 'interest',
                     key: 'id'
                 }
-            },
+            }
             },
         {
             sequelize,
