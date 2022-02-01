@@ -22,12 +22,12 @@ User.init(
             allowNull: false,
             validate: {
                 notEmpty: true,
-                msg: 'please choose a username!'
+                // msg: 'please choose a username!'
 
             },
             unique: {
                 args: true,
-                msg: 'Username already exists!'
+                // msg: 'Username already exists!'
             }
         },
         email: {
@@ -36,7 +36,7 @@ User.init(
             unique: true,
             validate: {
                 isEmail: true,
-                msg: 'please enter a valid email!'
+                // msg: 'please enter a valid email!'
             }
             },
         password: {
