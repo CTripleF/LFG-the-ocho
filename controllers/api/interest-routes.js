@@ -1,27 +1,28 @@
-const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { Post, User, Comment, Interest } = require('../../models');
-const withAuth = require('../../utils/auth');
+// const router = require('express').Router();
+// const sequelize = require('../../config/connection');
+// const { Post, User, Comment, Interest } = require('../../models');
+// const withAuth = require('../../utils/auth');
 
 // get all interests
 router.get('/', (req, res) => {
     Interest.findAll({
         attributes: [
             'id',
-            'post_id',
-            'game_interest'
+            'game_title',
+            'game_console',
+            'game_type'
         ],
-        include: [
-            {
-                model: Comment
-            },
-            {
-                model: User
-            },
-            {
-                model: Post
-            }
-        ]
+        // include: [
+        //     {
+        //         model: Comment
+        //     },
+        //     {
+        //         model: User
+        //     },
+        //     {
+        //         model: Post
+        //     }
+        // ]
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -39,20 +40,21 @@ router.get('/:id', (req, res) => {
         },
         attributes: [
             'id',
-            'post_id',
-            'game_interest'
+            'game_title',
+            'game_console',
+            'game_type'
         ],
-        include: [
-            {
-                model: Comment
-            },
-            {
-                model: User
-            },
-            {
-                model: Post
-            }
-        ]
+        // include: [
+        //     {
+        //         model: Comment
+        //     },
+        //     {
+        //         model: User
+        //     },
+        //     {
+        //         model: Post
+        //     }
+        // ]
     })
     .then(dbPostData => {
         if (!dbPostData) {
@@ -67,4 +69,4 @@ router.get('/:id', (req, res) => {
     });
 })
 
-module.exports = router;
+// module.exports = router;
