@@ -78,8 +78,12 @@ Post.init(
             }
             },
             // not sure about this interest_id below - I think we need a table that is seeded with all of the games and we can post to /xbox /cardgames etc. based on game id "where: game id: 1"
-            game_interest: {
+
+            //currently causese dependency loop "Dependency chain: post -> interest => post"
+            //loop was created in index route, need to identify better way to join keys
+            interest_id: {
                 type: DataTypes.INTEGER,
+                allowNull: true,
                 references: {
                     model: 'interest',
                     key: 'id'

@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: Comment,
-                attributes: ['comment_text', 'user_id', 'post_id'],
+                attributes: ['id','comment_text', 'user_id', 'post_id'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -71,10 +71,10 @@ router.get('/:id', (req, res) => {
 
 // Search by Query
 router.get('/', (req,res) => {
-    let queryId = req.params.game_interest;
+    let queryId = req.params.interest_id;
     Post.findAll({
         where: {
-            game_interest: queryId
+            interest_id: queryId
         },
         attributes: [
             'id',
@@ -108,7 +108,8 @@ router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
         discord_link: req.body.dircord_link,
-        user_id: req.session.user_id
+        user_id: req.session.user_id,
+        interest_id: req.body.interest_id
     }).then(dbPostData => res.json(dbPostData))
     .catch(err => {
         console.log(err);
