@@ -69,27 +69,30 @@ Post.init(
             validate: {
                 isURL: true
             }
-            },
-            user_id: {
+        },
+        game_title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                isAlphanumeric: true
+            }
+        },
+        game_console: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        game_type: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id'
             }
-            },
-            // not sure about this interest_id below - I think we need a table that is seeded with all of the games and we can post to /xbox /cardgames etc. based on game id "where: game id: 1"
-
-            //currently causese dependency loop "Dependency chain: post -> interest => post"
-            //loop was created in index route, need to identify better way to join keys
-            // interest_id: {
-            //     type: DataTypes.INTEGER,
-            //     allowNull: true,
-            //     references: {
-            //         model: 'interest',
-            //         key: 'id'
-            //     }
-            // }
-            },
+        },
+    },
         {
             sequelize,
             freezeTableName: true,

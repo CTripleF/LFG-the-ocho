@@ -121,7 +121,7 @@ router.post('/', withAuth, (req, res) => {
         game_title: req.body.game_title,
         game_console: req.body.game_console,
         game_type: req.body.game_type,
-        user_id: req.session.user_id,
+        user_id: req.session.user_id
         
     }).then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -133,7 +133,12 @@ router.post('/', withAuth, (req, res) => {
 // Edit
 router.put('/:id', withAuth, (req, res) => {
     Post.update({
-        title: req.body.title
+        title: req.body.title,
+        discord_link: req.body.discord_link,
+        game_title: req.body.game_title,
+        game_console: req.body.game_console,
+        game_type: req.body.game_type,
+        user_id: req.session.user_id
     },
     {
         where: {
