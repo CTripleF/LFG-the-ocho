@@ -1,18 +1,147 @@
-<ol class="post-list">
-  {{#each posts as |post|}}
-  <li>
-    <article class="post">
-      <div class="title">
-        <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
-        <span>({{post.post_url}})</span>
+
+<section class="hero is-small is-transparent">
+  <div class="hero-body">
+    <div class="columns is-vcentered">
+      <div class="column is-one-quarter">
+        <figure class="image is-1x1">
+          <img src="./assets/LFG-logo-white-transparent.png">
+        </figure>
       </div>
-      <div class="meta">
-        {{post.vote_count}} point(s) by {{post.user.username}} on
-        {{post.created_at}}
-        |
-        <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+      <div class="column has-text-right">
+        <div class="field is-grouped">
+          <p class="control is-expanded">
+            <input class="input" type="text" placeholder="Search by game or interest">
+          </p>
+          <p class="control">
+            <a class="button is-primary">
+              Search
+            </a>
+          </p>
+          <a class="button is-danger">
+            Logout
+          </a>
+        </div>
       </div>
-    </article>
-  </li>
-  {{/each}}
-</ol>
+    </div>
+  </div>
+</section>
+<section class="section is-transparent is-medium pt-0">
+  <div class="columns">
+    <div class="column is-3">
+      <aside class="menu has-text-white">
+        <p class="menu-label has-text-white">
+          MY INFO:
+        </p>
+        <ul class="menu-list has-text-white">
+          <li><a>My Profile</a></li>
+          <li><a>My Friends</a></li>
+        </ul>
+        <p class="menu-label has-text-white">
+          FILTER BY INTEREST:
+        </p>
+        <ul class="menu-list has-text-white">
+          <li><a>XBOX</a></li>
+          <li><a>Playstation</a></li>
+          <li><a>Cross-Platform</a></li>
+          <li><a>MMOs</a></li>
+          <li><a>MOBAs</a></li>
+          <li><a>RTS</a></li>
+          <li><a>Sports</a></li>
+          <li><a>Board Games</a></li>
+          <li><a>Card Games</a></li>
+          <li><a>Table Top Games</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="column is-9">
+      <!--CURRENTLY LOGGED IN USE APPEARS HERE!-->
+      <div class="card">
+        <!--HEADER IMAGE (Maybe Present Choices for each game type?!)-->
+        <div class="card-image">
+          <figure class="image is-2by1">
+            <img src="./assets/boardgame.jpg" alt="boardgame">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <!--USER UPLOADED PROFILE PIC-->
+              <figure class="image is-48x48">
+                <img src="./assets/profile pic.jpeg" alt="User Photo">
+              </figure>
+            </div>
+            <div class="media-content">
+              <!--USER NAME-->
+              <p class="title is-4">{{user.username}}</p>
+              <!--USER EMAIL-->
+              <p class="subtitle is-6">{{user.email}}</p>
+            </div>
+          </div>
+          <div class="content">
+            Bio
+            <!--USERS SELECTED INTERESTS-->
+            {{user.user_bio}}
+            <br>
+          </div>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item">
+              <button class="button is-primary is-fullwidth">Save</button>
+            </a>
+            <a href="/profile" class="card-footer-item">
+              <button class="button is-link is-fullwidth">Edit</button>
+            </a>
+            {{!-- <a href="#" class="card-footer-item">
+              <button class="button is-danger is-fullwidth">Delete</button>
+            </a> --}}
+          </footer>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Create New Post</h2>
+
+  <form class="new-post-form">
+    <div>
+      <label for="post-title">Title</label>
+      <input type="text" id="post-title" name="post-title" />
+    </div>
+    <div>
+      <label for="discord-link">Discord Link</label>
+      <input id="discord-link" name="discord-link" />
+    </div>
+    <div>
+      <label for="game_title">Game</label>
+      <input id="game_title" name="game_title" />
+    </div>
+    <div>
+      <label for="game_console">Console</label>
+      <input id="game_console" name="game_console" />
+    </div>
+    <div>
+      <label for="game_type">Type</label>
+      <input id="game_type" name="game_type" />
+    </div>
+    <button type="submit" class="btn">Create</button>
+  </form>
+</section>
+
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>

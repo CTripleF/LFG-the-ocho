@@ -17,18 +17,24 @@
 </head>
 
 <body>
-    {{!-- <div class="wrapper">
+    <div class="wrapper">
         <header>
             <h1>
                 <a href="/">LFG</a>
             </h1>
             <nav>
-                <a href="/login">login</a>
+                <a href="/dashboard">My profile</a>
             </nav>
             <nav>
-                <a href="/create-account">Register</a>
+                <a href="/profile">Edit Profile</a>
             </nav>
-        </header> --}}
+            <nav>
+                <a href="/api/posts">Posts</a>
+            </nav>
+             <nav>
+                <button id="logout">logout</button>
+            </nav>
+        </header>
         <main>
             {{{ body }}}
         </main>
@@ -36,7 +42,8 @@
             Thanks for visiting!
         </footer>
     </div>
-
+  <script src="/javascript/logout.js"></script>
+</body>
 </body>
 
 </html>
