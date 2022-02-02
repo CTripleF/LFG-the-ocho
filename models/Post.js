@@ -69,6 +69,7 @@ Post.init(
             validate: {
                 isURL: true
             }
+<<<<<<< HEAD
         },
         game_title: {
             type: DataTypes.STRING,
@@ -86,13 +87,46 @@ Post.init(
             allowNull: true
         },
         user_id: {
+=======
+            },
+            game_title: {
+              type: DataTypes.STRING,
+              allowNull: false,
+              validate: {
+                isAlphanumeric: true
+              }
+            },
+            game_console: {
+              type: DataTypes.STRING,
+              allowNull: true
+            },
+            // this will be where the users game preferences will be stored
+            game_type: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
+            user_id: {
+>>>>>>> a011f93b70179e67322a607966c93788b826e7e4
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id'
             }
+<<<<<<< HEAD
         },
     },
+=======
+            },
+            // interest_id: {
+            //     type: DataTypes.INTEGER,
+            //     allowNull: true,
+            //     references: {
+            //         model: 'interest',
+            //         key: 'id'
+            //     }
+            // }
+            },
+>>>>>>> a011f93b70179e67322a607966c93788b826e7e4
         {
             sequelize,
             freezeTableName: true,

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Post, Interest, User, Comment } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Find All
@@ -15,19 +15,18 @@ router.get('/', (req, res) => {
             'game_type'
         ],
         include: [
-            {
-                model: Comment,
-                attributes: ['id','comment_text', 'user_id', 'post_id'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
-            {
-                model: User,
-                attributes: ['username']
+          {
+            model: Comment,
+            attributes: ['id','comment_text', 'user_id', 'post_id'],
+            include: {
+              model: User,
+              attributes: ['username']
             }
-            
+          },
+          {
+            model: User,
+            attributes: ['username']
+          }
         ]
     }).then(dbPostData => res.json(dbPostData))
       .catch(err => {

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // // const database = require('mime-db');
+=======
+// const database = require('mime-db');
+>>>>>>> a011f93b70179e67322a607966c93788b826e7e4
 // const { Model, DataTypes } = require('sequelize');
 // const sequelize = require('../config/connection');
 
@@ -33,9 +37,14 @@
 //             model: 'post',
 //             key: 'id'
 //           }
+<<<<<<< HEAD
 //         },
 //     },
    
+=======
+//         }
+//     },
+>>>>>>> a011f93b70179e67322a607966c93788b826e7e4
 //     {
 //         sequelize,
 //         timestamps: false,

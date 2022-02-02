@@ -3,11 +3,16 @@
 // const { Post, User, Comment, Interest } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
+<<<<<<< HEAD
 // // get all interests
+=======
+// get all interests
+>>>>>>> a011f93b70179e67322a607966c93788b826e7e4
 // router.get('/', (req, res) => {
 //     Interest.findAll({
 //         attributes: [
 //             'id',
+<<<<<<< HEAD
 //             'post_id',
 //             'game_interest'
 //         ],
@@ -22,6 +27,23 @@
 //                 model: Post
 //             }
 //         ]
+=======
+//             'game_title',
+//             'game_console',
+//             'game_type'
+//         ],
+//         // include: [
+//         //     {
+//         //         model: Comment
+//         //     },
+//         //     {
+//         //         model: User
+//         //     },
+//         //     {
+//         //         model: Post
+//         //     }
+//         // ]
+>>>>>>> a011f93b70179e67322a607966c93788b826e7e4
 //     })
 //     .then(dbPostData => res.json(dbPostData))
 //     .catch(err => {
@@ -39,6 +61,7 @@
 //         },
 //         attributes: [
 //             'id',
+<<<<<<< HEAD
 //             'post_id',
 //             'game_interest'
 //         ],
@@ -53,6 +76,23 @@
 //                 model: Post
 //             }
 //         ]
+=======
+//             'game_title',
+//             'game_console',
+//             'game_type'
+//         ],
+//         // include: [
+//         //     {
+//         //         model: Comment
+//         //     },
+//         //     {
+//         //         model: User
+//         //     },
+//         //     {
+//         //         model: Post
+//         //     }
+//         // ]
+>>>>>>> a011f93b70179e67322a607966c93788b826e7e4
 //     })
 //     .then(dbPostData => {
 //         if (!dbPostData) {
@@ -67,4 +107,8 @@
 //     });
 // });
 
+<<<<<<< HEAD
 // module.exports = router;
+=======
+// // module.exports = router;
+>>>>>>> a011f93b70179e67322a607966c93788b826e7e4
