@@ -7,7 +7,7 @@ async function newFormHandler(event) {
     const userBio = document.querySelector('input[name="userBio"]').value;
     const discord = document.querySelector('input[name="discord"]').value;
 
-    const response = await fetch(`/api/profile`, {
+    const response = await fetch(`/profile`, {
     method: 'POST',
     body: JSON.stringify({
         username,

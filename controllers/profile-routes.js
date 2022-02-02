@@ -32,46 +32,45 @@ router.get('/,', withAuth, (req, res) => {
                 attributes: ['username']
             }
         ]
-    }).then(dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('profile', { posts, loggedIn: true });
-    }).catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-});
-
-// Get your interests
-router.get('/', (req, res) => {
-    Interest.findAll({
-        where: {
-            user_id: req.session.user_id
-        },
-        attributes: [
-            'id',
-            'post_id',
-            'game_interest',
-            'game_title',
-            'game_console',
-            'game_type'
-        ],
-        include: [
-            {
-                model: Comment
-            },
-            {
-                model: User
-            },
-            {
-                model: Post
-            }
-        ]
-    })
-    .then(dbPostData => res.json(dbPostData))
+    }).then(dbPostData => res.json(dbPostData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
 });
+
+
+// Get your interests
+// router.get('/', (req, res) => {
+//     Interest.findAll({
+//         where: {
+//             user_id: req.session.user_id
+//         },
+//         attributes: [
+//             'id',
+//             'post_id',
+//             'game_interest',
+//             'game_title',
+//             'game_console',
+//             'game_type'
+//         ],
+//         include: [
+//             {
+//                 model: Comment
+//             },
+//             {
+//                 model: User
+//             },
+//             {
+//                 model: Post
+//             }
+//         ]
+//     })
+//     .then(dbPostData => res.json(dbPostData))
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     });
+// });
 
 module.exports = router;
