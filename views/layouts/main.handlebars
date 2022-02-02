@@ -1,80 +1,49 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>LFG: The Ultimate Quest</title>
-        <!--STYLESHEET & FONT LINKS-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
-        <script src="https://kit.fontawesome.com/c4440f73eb.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../../public/stylesheets/style.css"/>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&family=Raleway:ital,wght@0,100;0,300;0,400;1,100;1,200&display=swap" rel="stylesheet">
-    </head>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LFG: The Ultimate Quest</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <script src="https://kit.fontawesome.com/c4440f73eb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&family=Raleway:ital,wght@0,100;0,300;0,400;1,100;1,200&display=swap"
+        rel="stylesheet">
+    {{!-- <link rel="stylesheet" type="text/css" href="your/bulma/path/bulma.css" /> --}}
+</head>
+
 <body>
-    <section class="hero is-small is-transparent">
-        <div class="hero-body">
-        <div class="columns is-vcentered">
-            <div class="column is-one-quarter">
-                <figure class="image is-1x1">
-                    <img src="../../public/stylesheets/assets/LFG-logo-white-transparent.png">
-                </figure>
-            </div>
-            <div class="column has-text-right">
-                <div class="field is-grouped">
-                    <p class="control is-expanded">
-                    <input class="input" type="text" placeholder="Search by game or interest">
-                    </p>
-                    <p class="control">
-                    <a class="button is-primary">
-                        Search
-                    </a>
-                    </p>
-                    {{#if loggedIn}}
-                    <a class="button is-danger">
-                        Logout
-                    </a>
-                    {{/if}}
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-    <section class="section is-transparent is-medium pt-0">
-        <div class="columns">
-            <div class="column is-2">
-                <aside class="menu has-text-white">
-                    <p class="menu-label has-text-white">
-                    MY INFO:
-                    </p>
-                    <ul class="menu-list has-text-white">
-                    <li><a>My Profile</a></li>
-                    <li><a>Chat Board</a></li>
-                    </ul>
-                    <p class="menu-label has-text-white">
-                    FILTER BY INTEREST:
-                    </p>
-                    <ul class="menu-list has-text-white">
-                        <li><a>XBOX</a></li>
-                        <li><a>Playstation</a></li>
-                        <li><a>Cross-Platform</a></li>
-                        <li><a>MMOs</a></li>
-                        <li><a>MOBAs</a></li>
-                        <li><a>RTS</a></li>
-                        <li><a>Sports</a></li>
-                        <li><a>Board Games</a></li>
-                        <li><a>Card Games</a></li>
-                        <li><a>Table Top Games</a></li>
-                    </ul>
-                </aside>
-            </div>
-
-            <div class="column is-10">
-                {{{body}}}
-            </div>
-        </div>
-    </section>
-
+    <div class="wrapper">
+        <header>
+            <h1>
+                <a href="/">LFG</a>
+            </h1>
+            <nav>
+                <a href="/dashboard">My profile</a>
+            </nav>
+            <nav>
+                <a href="/profile">Edit Profile</a>
+            </nav>
+            <nav>
+                <a href="/api/posts">Posts</a>
+            </nav>
+             <nav>
+                <button id="logout">logout</button>
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+            Thanks for visiting!
+        </footer>
+    </div>
+  <script src="/javascript/logout.js"></script>
 </body>
+</body>
+
 </html>

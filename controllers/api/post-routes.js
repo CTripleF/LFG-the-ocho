@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Post, Interest, User, Comment } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Find All
@@ -9,21 +9,24 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'title',
-            'discord_link'
+            'discord_link',
+            'game_title',
+            'game_console',
+            'game_type'
         ],
         include: [
-            {
-                model: Comment,
-                attributes: ['id','comment_text', 'user_id', 'post_id'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
-            {
-                model: User,
-                attributes: ['username']
+          {
+            model: Comment,
+            attributes: ['id','comment_text', 'user_id', 'post_id'],
+            include: {
+              model: User,
+              attributes: ['username']
             }
+          },
+          {
+            model: User,
+            attributes: ['username']
+          }
         ]
     }).then(dbPostData => res.json(dbPostData))
       .catch(err => {
@@ -41,7 +44,10 @@ router.get('/:id', (req, res) => {
         attributes: [
             'id',
             'title',
-            'discord_link'
+            'discord_link',
+            'game_title',
+            'game_console',
+            'game_type'
         ],
         include: [
             {
@@ -71,15 +77,18 @@ router.get('/:id', (req, res) => {
 
 // Search by Query
 router.get('/', (req,res) => {
-    let queryId = req.params.interest_id;
+    let gameQuery = req.params.game_type;
     Post.findAll({
         where: {
-            interest_id: queryId
+            game_type: gameQuery
         },
         attributes: [
             'id',
             'title',
-            'discord_link'
+            'discord_link',
+            'game_title',
+            'game_console',
+            'game_type'
         ],
         include: [
             {
@@ -107,9 +116,12 @@ router.get('/', (req,res) => {
 router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
-        discord_link: req.body.dircord_link,
+        discord_link: req.body.discord_link,
+        game_title: req.body.game_title,
+        game_console: req.body.game_console,
+        game_type: req.body.game_type,
         user_id: req.session.user_id,
-        interest_id: req.body.interest_id
+        
     }).then(dbPostData => res.json(dbPostData))
     .catch(err => {
         console.log(err);
@@ -156,3 +168,5 @@ router.delete('/:id', withAuth, (req, res) => {
         res.status(500).json(err);
     })
 });
+
+module.exports = router;

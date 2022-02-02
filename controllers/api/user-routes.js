@@ -22,7 +22,7 @@ User.findOne({
     include: [
     {
         model: Post,
-        attributes: ['id', 'title', 'discord_url', 'created_at', 'discord_link']
+        attributes: ['id', 'title', 'created_at', 'discord_link']
     },
     {
         model: Comment,
@@ -53,7 +53,7 @@ User.create({
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
-    user_bio: red.body.user_bio
+    user_bio: req.body.user_bio
 })
     .then(dbUserData => {
         req.session.save(() => {
