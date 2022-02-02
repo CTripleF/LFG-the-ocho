@@ -15,25 +15,25 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/homepage/');
+        document.location.replace('/dashboard/');
     } else {
         alert(response.statusText);
     }
     }
 }
-var password = document.getElementById("password-signup")
-    , confirm_password = document.getElementById("password-confirm");
+// var password = document.getElementById("password-signup")
+//     , confirm_password = document.getElementById("password-confirm");
 
-function validatePassword(){
-    if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
-    } else {
-    confirm_password.setCustomValidity('');
-    }
-}
+// function validatePassword(){
+//     if(password.value != confirm_password.value) {
+//     confirm_password.setCustomValidity("Passwords Don't Match");
+//     } else {
+//     confirm_password.setCustomValidity('');
+//     }
+// }
 
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+// password.onchange = validatePassword;
+// confirm_password.onkeyup = validatePassword;
 
 
 async function signupFormHandler(event) {
@@ -55,7 +55,7 @@ async function signupFormHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/homepage/');
+        document.location.replace('/dashboard/');
     } else {
         alert(response.statusText);
     }
