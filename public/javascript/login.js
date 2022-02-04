@@ -21,7 +21,14 @@ async function loginFormHandler(event) {
         alert(response.statusText);
     }
     }
-}
+};
+
+function createButtonHandler(event) {
+    event.preventDefault();
+    document.location.replace('/create-account')
+};
+
+
 // var password = document.getElementById("password-signup")
 //     , confirm_password = document.getElementById("password-confirm");
 
@@ -63,6 +70,5 @@ async function loginFormHandler(event) {
 //     }
 // }
 
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-
-// document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+document.getElementById('login-button').addEventListener('submit', loginFormHandler);
+document.getElementById('create-link-button').addEventListener('click', createButtonHandler);

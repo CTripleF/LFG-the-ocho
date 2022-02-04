@@ -60,38 +60,6 @@ router.get("/", withAuth, (req, res) => {
             attributes: ["username"],
           },
         },
-<<<<<<< HEAD
-        attributes: [
-            'id',
-            'title',
-            'discord_link',
-            'game_title',
-            'game_console',
-            'game_type'
-        ],
-        include: [
-            {
-                model: Comment,
-                attributes: ['comment_text', 'user_id', 'post_id'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
-            {
-                model: User,
-                attributes: ['username']
-            }
-        ]
-    }).then(dbPostData => res.json(dbPostData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-});
-
-
-=======
         {
           model: User,
           attributes: ["username"],
@@ -111,7 +79,6 @@ router.get("/", withAuth, (req, res) => {
       res.status(500).json(err);
     });
   });
->>>>>>> 2f31f9e29d1bd7ac41cb1867dd228d9cd06594a7
 // Get your interests
 // router.get('/', (req, res) => {
 //     Interest.findAll({
