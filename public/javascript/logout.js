@@ -12,4 +12,4 @@ async function logout() {
   }
   
 //  verify "#logout"
-document.querySelector('#logout').addEventListener('click', logout);
+document.getElementById('logout-button').addEventListener('click', logout);
