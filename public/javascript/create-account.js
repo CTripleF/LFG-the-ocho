@@ -1,18 +1,3 @@
-// var password = document.getElementById("password-signup")
-//     , confirm_password = document.getElementById("password-confirm");
-
-// function validatePassword(){
-//     if(password.value != confirm_password.value) {
-//     confirm_password.setCustomValidity("Passwords Don't Match");
-//     } else {
-//     confirm_password.setCustomValidity('');
-//     }
-// }
-
-// password.onchange = validatePassword;
-// confirm_password.onkeyup = validatePassword;
-
-
 async function signupFormHandler(event) {
   event.preventDefault();
 
@@ -45,5 +30,5 @@ function returnToLoginHandler(event) {
 
 };
 
-document.getElementById('create-button').addEventListener('submit', signupFormHandler);
+document.querySelector('.create-form').addEventListener('submit', signupFormHandler);
 document.getElementById('return-login-button').addEventListener('click', returnToLoginHandler);

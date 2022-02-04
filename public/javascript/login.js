@@ -21,7 +21,7 @@ async function loginFormHandler(event) {
         alert(response.statusText);
     }
     }
-};
+}
 
 function createButtonHandler(event) {
     event.preventDefault();
@@ -29,46 +29,5 @@ function createButtonHandler(event) {
 };
 
 
-// var password = document.getElementById("password-signup")
-//     , confirm_password = document.getElementById("password-confirm");
-
-// function validatePassword(){
-//     if(password.value != confirm_password.value) {
-//     confirm_password.setCustomValidity("Passwords Don't Match");
-//     } else {
-//     confirm_password.setCustomValidity('');
-//     }
-// }
-
-// password.onchange = validatePassword;
-// confirm_password.onkeyup = validatePassword;
-
-
-// async function signupFormHandler(event) {
-//     event.preventDefault();
-
-//     const username = document.querySelector('#name-signup').value.trim();
-//     const email = document.querySelector('#email-signup').value.trim();
-//     const password = document.querySelector('#password-signup').value.trim();
-
-//     if (username && email && password) {
-//     const response = await fetch('/api/users', {
-//         method: 'post',
-//         body: JSON.stringify({
-//         username,
-//         email,
-//         password
-//         }),
-//         headers: { 'Content-Type': 'application/json' }
-//     }).then((response) => {console.log(response)});
-
-//     if (response.ok) {
-//         document.location.replace('/dashboard/');
-//     } else {
-//         alert(response.statusText);
-//     }
-//     }
-// }
-
-document.getElementById('login-button').addEventListener('submit', loginFormHandler);
+document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
 document.getElementById('create-link-button').addEventListener('click', createButtonHandler);
