@@ -37,6 +37,13 @@ async function signupFormHandler(event) {
       alert(response.statusText);
   }
   }
-}
+};
 
-document.querySelector('.create-form').addEventListener('submit', signupFormHandler);
+function returnToLoginHandler(event) {
+    event.preventDefault();
+    document.location.replace('/login');
+
+};
+
+document.getElementById('create-button').addEventListener('submit', signupFormHandler);
+document.getElementById('return-login-button').addEventListener('click', returnToLoginHandler);
