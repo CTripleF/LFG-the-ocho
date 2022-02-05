@@ -2,13 +2,19 @@ async function newFormHandler(event) {
     event.preventDefault();
 
     const title = document.querySelector('input[name="post-title"]').value;
-    const discord_url = document.querySelector('input[name="discord-url]').value;
+    const discord_link = document.querySelector('input[name="discord-link]').value;
+    const game_title = document.querySelector('input[name="game_title"]').value;
+    const game_console = document.querySelector('input[name="game_console"]').value;
+    const game_type = document.querySelector('input[name="game_type"]').value;
 
     const response = await fetch('/api/posts', {
         method: 'POST',
         body: JSON.stringify({
             title,
-            discord_url
+            discord_link,
+            game_title,
+            game_console,
+            game_type
         }),
         headers: {
             'Content-Type': 'application/json'
