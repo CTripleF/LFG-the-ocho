@@ -1,4 +1,4 @@
-async function newFormHandler(event) {
+async function updateFormHandler(event) {
     event.preventDefault();
 
     const username = document.querySelector('input[name="username"]').value;
@@ -26,6 +26,13 @@ async function newFormHandler(event) {
     } else {
     alert(response.statusText);
     }
-}
+};
 
+function editeButtonHandler(event) {
+    event.preventDefault();
+    document.location.replace('/profile')
+};
+
+
+document.getElementById('edit-button').addEventListener('click', editeButtonHandler);
 document.querySelector('.profile-update-form').addEventListener('submit', newFormHandler);
