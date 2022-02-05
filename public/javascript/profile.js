@@ -4,17 +4,19 @@ async function updateFormHandler(event) {
     const username = document.querySelector('input[name="username"]').value;
     const email = document.querySelector('input[name="email"]').value;
     const password = document.querySelector('input[name="password"]').value;
-    const userBio = document.querySelector('input[name="userBio"]').value;
+    const user_bio = document.querySelector('input[name="userBio"]').value;
     const discord = document.querySelector('input[name="discord"]').value;
+    const id = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+      ];
 
-    const response = await fetch(`/profile`, {
-    method: 'POST',
+    const response = await fetch(`/api/users/${id}`, {
+    method: 'PUT',
     body: JSON.stringify({
         username,
         email,
         password,
-        userBio,
-        discord
+        user_bio
     }),
     headers: {
         'Content-Type': 'application/json'
@@ -28,11 +30,19 @@ async function updateFormHandler(event) {
     }
 };
 
-function editeButtonHandler(event) {
+// this button is on /dashboard
+function editButtonHandler(event) {
     event.preventDefault();
-    document.location.replace('/profile')
+    document.location.replace('/profile');
+};
+
+// this button is on /profile but does not work...
+function cancelButtonHandler(event) {
+    event.preventDefault();
+    document.location.replace('/dashboard');
 };
 
 
-document.getElementById('edit-button').addEventListener('click', editeButtonHandler);
-document.querySelector('.profile-update-form').addEventListener('submit', newFormHandler);
+document.getElementById('edit-button').addEventListener('click', editButtonHandler);
+document.querySelector('.profile-update-form').addEventListener('submit', updateFormHandler);
+document.getElementById('cancel-button').addEventListener('click', cancelButtonHandler);

@@ -53,7 +53,7 @@ User.create({
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
-    // user_bio: req.body.user_bio
+    user_bio: req.body.user_bio
 })
     .then(dbUserData => {
         req.session.save(() => {
@@ -117,7 +117,7 @@ router.put('/:id', (req, res) => {
   User.update(req.body, {
     individualHooks: true,
     where: {
-      id: req.params.id
+      id: req.session.id
     }
   })
     .then(dbUserData => {
