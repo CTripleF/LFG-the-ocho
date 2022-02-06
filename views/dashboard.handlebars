@@ -50,9 +50,11 @@
           <li><a>Playstation</a></li>
           <li><a>PC</a></li>
           <li><a>Cross-Platform</a></li>
+          <li><a>FPS</a></li>
           <li><a>MMOs</a></li>
           <li><a>MOBAs</a></li>
           <li><a>RTS</a></li>
+          <li><a>RPG</a></li>
           <li><a>Sports</a></li>
           <li><a>Board Games</a></li>
           <li><a>Card Games</a></li>
@@ -63,27 +65,28 @@
 
 
   <section class="column is-3">
-    <h2>Create New Post</h2>
-      <form class="new-post-form">
+      <form class="new-post-form box">
+        <p class="has-text-weight-bold">Find Your Group</p>
+        <br>
         <div class="field">
           <label class="label" for="post_title">Title</label>
-          <input class="input" type="text" id="post_title" name="post_title"/>
+          <input placeholder="LFG" class="input is-link" type="text" id="post_title" name="post_title"/>
         </div>
         <div class="field">
           <label class="label" for="discord_link">Discord Link</label>
-          <input class="input" id="discord_link" name="discord_link"/>
+          <input placeholder="discord.gg"class="input is-link" id="discord_link" name="discord_link"/>
         </div>
         <div class="field">
           <label class="label" for="game_title">Game</label>
-          <input class="input" id="game_title" name="game_title"/>
+          <input placeholder="Your Game"class="input is-link" id="game_title" name="game_title"/>
         </div>
         <div class="field">
           <label class="label" for="game_console">Console</label>
-          <input class="input" id="game_console" name="game_console"/>
+          <input placeholder="XBOX, PC, Cross-Platform, etc."class="input is-link" id="game_console" name="game_console"/>
         </div>
         <div class="field">
           <label class="label" for="game_type">Type</label>
-          <div class="select">
+          <div class="select is-link">
             <select id="game_type" name="game_type">
               <option>MMO</option>
               <option>FPS</option>
@@ -97,8 +100,10 @@
               <option>Other</option>
             </select>
           </div>
-          <div class="control">
-            <button type="submit" id="post-submit" class="btn">Create</button>
+          <br>
+          <br>
+          <div class="control has-text-centered">
+            <button type="submit" id="post-submit" class="btn button is-danger">Create</button>
           </div>
       </form>
 </section>
