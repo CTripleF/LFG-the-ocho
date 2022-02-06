@@ -22,7 +22,6 @@ async function newPostHandler(event) {
     });
 
     if (response.ok) {
-        // confirm this name is homepage!!
         document.location.replace('/dashboard');
     } else {
         alert(response.statusText);

@@ -45,4 +45,4 @@ function cancelButtonHandler(event) {
 
 document.getElementById('edit-button').addEventListener('click', editButtonHandler);
 document.querySelector('.profile-update-form').addEventListener('submit', updateFormHandler);
-document.getElementById('cancel-button').addEventListener('click', cancelButtonHandler);
+document.querySelector('#cancel-button').addEventListener('click', cancelButtonHandler);
