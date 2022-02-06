@@ -62,7 +62,7 @@ User.create({
         req.session.loggedIn = true;
 
         res.json(dbUserData);
-        });
+        });S
     })
     .catch(err => {
         console.log(err);
