@@ -8,7 +8,7 @@ async function newPostHandler(event) {
     const game_type = document.querySelector('select[name="game_type"]').value;
 
     const response = await fetch('/api/posts', {
-        method: 'POST',
+        method: 'post',
         body: JSON.stringify({
             title,
             discord_link,
@@ -26,7 +26,7 @@ async function newPostHandler(event) {
     } else {
         alert(response.statusText);
     }
-}
+};
 
 
 document.getElementById('post-submit').addEventListener('submit', newPostHandler);
