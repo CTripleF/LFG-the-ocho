@@ -48,6 +48,7 @@
         <ul class="menu-list has-text-white">
           <li><a>XBOX</a></li>
           <li><a>Playstation</a></li>
+          <li><a>PC</a></li>
           <li><a>Cross-Platform</a></li>
           <li><a>MMOs</a></li>
           <li><a>MOBAs</a></li>
@@ -66,25 +67,39 @@
       <form class="new-post-form">
         <div class="field">
           <label class="label" for="post_title">Title</label>
-          <input class="input" type="text" id="post_title" name="post_title" />
+          <input class="input" type="text" id="post_title" name="post_title"/>
         </div>
         <div class="field">
           <label class="label" for="discord_link">Discord Link</label>
-          <input class="input" id="discord_link" name="discord_link" />
+          <input class="input" id="discord_link" name="discord_link"/>
         </div>
         <div class="field">
           <label class="label" for="game_title">Game</label>
-          <input class="input" id="game_title" name="game_title" />
+          <input class="input" id="game_title" name="game_title"/>
         </div>
         <div class="field">
           <label class="label" for="game_console">Console</label>
-          <input class="input" id="game_console" name="game_console" />
+          <input class="input" id="game_console" name="game_console"/>
         </div>
         <div class="field">
           <label class="label" for="game_type">Type</label>
-          <input class="input" id="game_type" name="game_type" />
-        </div>
-        <button type="submit" id="post-submit" class="btn">Create</button>
+          <div class="select">
+            <select id="game_type" name="game_type">
+              <option>MMO</option>
+              <option>FPS</option>
+              <option>Sports</option>
+              <option>MOBA</option>
+              <option>RTS</option>
+              <option>RPG</option>
+              <option>Board Game</option>
+              <option>Table Top Game</option>
+              <option>Card Game</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="control">
+            <button type="submit" id="post-submit" class="btn">Create</button>
+          </div>
       </form>
 </section>
 
@@ -113,11 +128,6 @@
   </li>
   {{/each}}
 </ul>
-</section>
-
-  
-
-  
 </section>
 
 

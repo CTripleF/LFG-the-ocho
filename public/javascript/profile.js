@@ -35,7 +35,7 @@ async function updateFormHandler(event) {
 // this button is on /dashboard
 function editButtonHandler(event) {
     event.preventDefault();
-    document.location.replace('/profile');
+    res.render('profile-edit');
 };
 
 // this button is on /profile but does not work...
