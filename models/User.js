@@ -51,7 +51,7 @@ User.init(
         //     allowNull: true,
         // }
         user_bio: {
-            type: DataTypes.STRING(80),
+            type: DataTypes.STRING(150),
             allowNull: true,
         },
         

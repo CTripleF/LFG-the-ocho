@@ -1,4 +1,4 @@
-const res = require("express/lib/response");
+// const res = require("express/lib/response");
 
 async function updateFormHandler(event) {
     event.preventDefault();
@@ -18,6 +18,7 @@ async function updateFormHandler(event) {
         username,
         email,
         password,
+        discord,
         user_bio
     }),
     headers: {
@@ -32,13 +33,13 @@ async function updateFormHandler(event) {
     }
 };
 
-// this button is on /dashboard
+// this button is on /profile
 function editButtonHandler(event) {
     event.preventDefault();
     document.location.replace('/profile');
 };
 
-// this button is on /profile but does not work...
+// this button is on /dashboard
 function cancelButtonHandler(event) {
     event.preventDefault();
     document.location.replace('/dashboard');

@@ -37,7 +37,7 @@
             <textarea class="textarea" id="userBio" name="userBio" placeholder="Update User Bio"></textarea>
         </div>
     </div>
-    <!--USER INTERESTS-->
+    {{!-- <!--USER INTERESTS-->
     <div class="select is-multiple is-info">
         <label class="label has-text-white">Update Interests:</label>
         <select multiple size="10">
@@ -62,7 +62,7 @@
                 <i class="fa fab-discord"></i>
             </span>
         </div>
-    </div>
+    </div> --}}
     <div class="field is-grouped">
         <div class="control">
             <button class="button is-primary" type="submit">Save</button>
@@ -73,19 +73,4 @@
     </div>
 </form>
 
-{{!-- {{#if posts.length}}
-<section>
-    <h2>Your Posts</h2>
-    <ol>
-    {{#each posts as |post|}}
-    <li>
-        {{> post-info post}}
-        <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-    {{/each}}
-    </ol>
-</section>
-{{/if}} --}}
-
 <script src="/public/javascript/profile.js"></script>
-{{!-- <script src="../public/javascript/add-post.js"></script> --}}

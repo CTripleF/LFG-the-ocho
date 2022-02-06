@@ -72,7 +72,7 @@ router.get("/", withAuth, (req, res) => {
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
   
-      res.render('profile-page', {
+      res.render('profile-edit', {
         posts,
         loggedIn: req.session.loggedIn
       });
