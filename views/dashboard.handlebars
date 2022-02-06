@@ -114,15 +114,21 @@
         <p class="card-header-title has-text-dark">{{post.title}}</p>
         </header>
         <div class="card-content">
-        <a href="{{post.discord_link}}">{{post.discord_link}}</a>
+        <span class="has-text-danger">Discord: </span><a href="{{post.discord_link}}">{{post.discord_link}}</a>
         <br>
         <span class="has-text-danger">Game: </span><span>{{post.game_title}}</span>
         <br>
         <span class="has-text-danger">Console: </span><span>{{post.game_console}}</span>
         <br>
         <span class="has-text-danger">Game Type: </span><span> {{post.game_type}}</span>
-        </div>
-      </div>
+        <br>
+        <p class="has-text-weight-bold is-uppercase has-text-centered">Comments</p>
+        {{#each comments as |comment|}}
+        <span class="has-text-success has-text-weight-bold">{{comment.user.username}}: </span>
+        <span>{{comment.comment_text}}</span>
+        <br>
+        {{/each}}
+         </div>
     </article>
     <br>
   </li>
