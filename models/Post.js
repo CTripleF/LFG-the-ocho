@@ -73,9 +73,9 @@ Post.init(
         game_title: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                isAlphanumeric: true
-            }
+            // validate: {
+            //     isAlphanumeric: true
+            // }
         },
         game_console: {
             type: DataTypes.STRING,
