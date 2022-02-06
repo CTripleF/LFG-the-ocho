@@ -52,8 +52,7 @@ router.post('/', (req, res) => {
 User.create({
     username: req.body.username,
     email: req.body.email,
-    password: req.body.password,
-    user_bio: req.body.user_bio
+    password: req.body.password
 })
     .then(dbUserData => {
         req.session.save(() => {
@@ -62,7 +61,7 @@ User.create({
         req.session.loggedIn = true;
 
         res.json(dbUserData);
-        });S
+        });
     })
     .catch(err => {
         console.log(err);
