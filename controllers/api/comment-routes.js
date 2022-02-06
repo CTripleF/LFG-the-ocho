@@ -25,6 +25,18 @@ Comment.create({
     });
 });
 
+router.get('/', withAuth, (req, res) => {
+    Comment.findbyFk().then(dbCommentData => {
+    const comments = dbCommentData.map(comment => comment.get({ plain: true}));
+    res.render('dashboard', { 
+        comments
+    });
+}).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+    });
+});
+
 router.delete('/:id', withAuth, (req, res) => {
 Comment.destroy({
     where: {

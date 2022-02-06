@@ -5,10 +5,10 @@ async function newPostHandler(event) {
     const discord_link = document.querySelector('input[name="discord_link]').value;
     const game_title = document.querySelector('input[name="game_title"]').value;
     const game_console = document.querySelector('input[name="game_console"]').value;
-    const game_type = document.querySelector('input[name="game_type"]').value;
+    const game_type = document.querySelector('select[name="game_type"]').value;
 
     const response = await fetch('/api/posts', {
-        method: 'POST',
+        method: 'post',
         body: JSON.stringify({
             title,
             discord_link,
@@ -26,7 +26,7 @@ async function newPostHandler(event) {
     } else {
         alert(response.statusText);
     }
-}
+};
 
 
 document.getElementById('post-submit').addEventListener('submit', newPostHandler);

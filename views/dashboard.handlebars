@@ -48,10 +48,13 @@
         <ul class="menu-list has-text-white">
           <li><a>XBOX</a></li>
           <li><a>Playstation</a></li>
+          <li><a>PC</a></li>
           <li><a>Cross-Platform</a></li>
+          <li><a>FPS</a></li>
           <li><a>MMOs</a></li>
           <li><a>MOBAs</a></li>
           <li><a>RTS</a></li>
+          <li><a>RPG</a></li>
           <li><a>Sports</a></li>
           <li><a>Board Games</a></li>
           <li><a>Card Games</a></li>
@@ -62,29 +65,46 @@
 
 
   <section class="column is-3">
-    <h2>Create New Post</h2>
-      <form class="new-post-form">
+      <form class="new-post-form box">
+        <p class="has-text-weight-bold">Find Your Group</p>
+        <br>
         <div class="field">
           <label class="label" for="post_title">Title</label>
-          <input class="input" type="text" id="post_title" name="post_title" />
+          <input placeholder="LFG" class="input is-link" type="text" id="post_title" name="post_title"/>
         </div>
         <div class="field">
           <label class="label" for="discord_link">Discord Link</label>
-          <input class="input" id="discord_link" name="discord_link" />
+          <input placeholder="discord.gg"class="input is-link" id="discord_link" name="discord_link"/>
         </div>
         <div class="field">
           <label class="label" for="game_title">Game</label>
-          <input class="input" id="game_title" name="game_title" />
+          <input placeholder="Your Game"class="input is-link" id="game_title" name="game_title"/>
         </div>
         <div class="field">
           <label class="label" for="game_console">Console</label>
-          <input class="input" id="game_console" name="game_console" />
+          <input placeholder="XBOX, PC, Cross-Platform, etc."class="input is-link" id="game_console" name="game_console"/>
         </div>
         <div class="field">
           <label class="label" for="game_type">Type</label>
-          <input class="input" id="game_type" name="game_type" />
-        </div>
-        <button type="submit" id="post-submit" class="btn">Create</button>
+          <div class="select is-link">
+            <select id="game_type" name="game_type">
+              <option>MMO</option>
+              <option>FPS</option>
+              <option>Sports</option>
+              <option>MOBA</option>
+              <option>RTS</option>
+              <option>RPG</option>
+              <option>Board Game</option>
+              <option>Table Top Game</option>
+              <option>Card Game</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <br>
+          <br>
+          <div class="control has-text-centered">
+            <button type="submit" id="post-submit" class="btn button is-danger">Create</button>
+          </div>
       </form>
 </section>
 
@@ -99,25 +119,26 @@
         <p class="card-header-title has-text-dark">{{post.title}}</p>
         </header>
         <div class="card-content">
-        <a href="{{post.discord_link}}">{{post.discord_link}}</a>
+        <span class="has-text-danger">Discord: </span><a href="{{post.discord_link}}">{{post.discord_link}}</a>
         <br>
         <span class="has-text-danger">Game: </span><span>{{post.game_title}}</span>
         <br>
         <span class="has-text-danger">Console: </span><span>{{post.game_console}}</span>
         <br>
         <span class="has-text-danger">Game Type: </span><span> {{post.game_type}}</span>
-        </div>
-      </div>
+        <br>
+        <p class="has-text-weight-bold is-uppercase has-text-centered">Comments</p>
+        {{#each comments as |comment|}}
+        <span class="has-text-success has-text-weight-bold">{{comment.user.username}}: </span>
+        <span>{{comment.comment_text}}</span>
+        <br>
+        {{/each}}
+         </div>
     </article>
     <br>
   </li>
   {{/each}}
 </ul>
-</section>
-
-  
-
-  
 </section>
 
 
