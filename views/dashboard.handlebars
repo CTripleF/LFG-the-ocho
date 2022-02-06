@@ -59,7 +59,34 @@
       </aside>
     </div>
 
-    <div class="column is-9">
+  <section class="column is-6">
+  <ul class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    <article class="post">
+      <div class="card">
+        <header class="card-header">
+        <p class="card-header-title has-text-info">{{post.user.username}}</p>
+        <p class="card-header-title has-text-dark">{{post.title}}</p>
+        </header>
+        <div class="card-content">
+        <a href="{{post.discord_link}}">{{post.discord_link}}</a>
+        <br>
+        <span class="has-text-danger">Game: </span><span>{{post.game_title}}</span>
+        <br>
+        <span class="has-text-danger">Console: </span><span>{{post.game_console}}</span>
+        <br>
+        <span class="has-text-danger">Game Type: </span><span> {{post.game_type}}</span>
+        </div>
+      </div>
+    </article>
+    <br>
+  </li>
+  {{/each}}
+</ul>
+</section>
+
+    {{!-- <div class="column is-9">
       <!--CURRENTLY LOGGED IN USE APPEARS HERE!-->
       <div class="card">
         <!--HEADER IMAGE (Maybe Present Choices for each game type?!)-->
@@ -104,26 +131,10 @@
       </div>
     </div>
 
-  </div>
+  </div> --}}
 </section>
 
-<section>
-  <ol class="post-list">
-  {{#each posts as |post|}}
-  <li>
-    <article class="post">
-      <div class="title">
-        <p>{{post.title}}</p>
-        <a href="{{post.discord_link}}">{{post.discord_link}}</a>
-        <p>"Game: " {{post.game_title}}</p>
-        <p>"Console: "{{post.game_console}}</p>
-        <p>"Game Type: "{{post.game_type}}</p>
 
-    </article>
-  </li>
-  {{/each}}
-</ol>
-</section>
 
 <section>
   <h2>Create New Post</h2>
