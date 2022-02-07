@@ -1,5 +1,5 @@
 <!--EDIT PROFILE PAGE FORM, WILL FILL SPACE UNDER NAV BAR & TO RIGHT OF MENU-->
-<form class="profile-update-form">
+<form class="profile-update-form" id="profile-update-form">
     <!--USERNAME-->
     <div class="field">
         <label class="label has-text-white">Username:</label>
@@ -34,7 +34,7 @@
     <div class="field">
         <label class="label has-text-white">User Bio:</label>
         <div class="control is-info">
-            <textarea class="textarea" id="userBio" name="userBio" placeholder="Update User Bio"></textarea>
+            <textarea class="textarea" id="userBio" name="user_bio" placeholder="Update User Bio"></textarea>
         </div>
     </div>
     {{!-- <!--USER INTERESTS-->
@@ -52,7 +52,7 @@
             <option value="Card Games">Card Games</option>
             <option value="Table Top Games">Table Top Games</option>
         </select>
-    </div>
+    </div> --}}
     <!--DISCORD LINK-->
     <div class="field">
         <label class="label has-text-white">Discord Server Link:</label>
@@ -62,10 +62,10 @@
                 <i class="fa fab-discord"></i>
             </span>
         </div>
-    </div> --}}
+    </div>
     <div class="field is-grouped">
         <div class="control">
-            <button class="button is-primary" type="submit">Save</button>
+            <button class="button is-primary" id="save-button" type="button">Save</button>
         </div>
         <div class="control">
             <button type="button" id="cancel-button" class="button is-danger">Cancel</button>
