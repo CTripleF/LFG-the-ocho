@@ -6,7 +6,7 @@
 
 
 [Application screenshot](images/screenshot.png) <br>
-<img src = "https://github.com/CTripleF/LFG-the-ocho/images/screenshot.png" />
+![screenshot](https://user-images.githubusercontent.com/91702886/152719223-8212ee74-6bfe-4081-a7ed-da3962e13e5f.jpg)
 
 # Technologies used:
 ## bcrypt <br> bulma NPM package <br> connect-session-sequelize <br> dotenv <br> express <br> express-handlebars <br> express-session <br> handlebars <br> mysql2 <br> sequelize
