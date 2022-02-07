@@ -65,7 +65,7 @@
 
 
   <section class="column is-3">
-      <form class="new-post-form box">
+      <form class="new-post-form box" id="post-submit">
         <p class="has-text-weight-bold">Find Your Group</p>
         <br>
         <div class="field">
@@ -103,7 +103,7 @@
           <br>
           <br>
           <div class="control has-text-centered">
-            <button type="submit" id="post-submit" class="btn button is-danger">Create</button>
+            <button type="submit" class="btn button is-danger">Create</button>
           </div>
       </form>
 </section>
@@ -133,7 +133,7 @@
         <span>{{comment.comment_text}}</span>
         <br>
         {{/each}}
-         </div>
+        </div>
     </article>
     <br>
   </li>
@@ -150,4 +150,4 @@
 
 <script src="/javascript/add-post.js"></script>
 <script src ="/javascript/logout.js"></script>
-<script src="/javascript/profile.js"></script>
+<script src="/javascript/dashboard.js"></script>
